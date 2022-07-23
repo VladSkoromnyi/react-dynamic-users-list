@@ -1,0 +1,21 @@
+.Users {
+	border: 1px solid #DFE0EB;
+	border-radius: 8px;
+	background-color: #fff;
+
+	margin: 40px 30px 30px;
+	padding-top: 32px;
+
+	&__list {
+	}
+
+	&__link {
+		display: block;
+		border-top: 1.5px solid #DFE0EB;
+		padding: 26px 32px;
+
+		&:hover {
+			background-color: #f4f6fd;
+		}
+	}
+}
