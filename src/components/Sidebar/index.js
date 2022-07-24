@@ -2,6 +2,9 @@ import './index.scss';
 import { NavLink } from 'react-router-dom';
 
 export const Sidebar = () => {
+	const activeClassName = 'Sidebar__nav-link Sidebar__nav-link--active'; 
+	const inactiveClassName = 'Sidebar__nav-link';
+
 	return (
 		<div className="Sidebar">
 			<div className="Sidebar__logo">
@@ -15,7 +18,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="/"
-						className="Sidebar__nav-link icon icon--home"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-chart-pie"></i>
 						Overview
@@ -24,7 +29,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="users"
-						className="Sidebar__nav-link"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-users-rectangle"></i>
 						Users
@@ -33,7 +40,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="ideas"
-						className="Sidebar__nav-link"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-lightbulb"></i>
 						Ideas
@@ -42,7 +51,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="contacts"
-						className="Sidebar__nav-link"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-users"></i>
 						Contacts
@@ -51,7 +62,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="agents"
-						className="Sidebar__nav-link"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-user-tie"></i>
 						Agents
@@ -60,7 +73,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="articles"
-						className="Sidebar__nav-link"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-book"></i>
 						Articles
@@ -72,7 +87,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="settings"
-						className="Sidebar__nav-link"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-gear"></i>
 						Settings
@@ -81,7 +98,9 @@ export const Sidebar = () => {
 				<li className="Sidebar__nav-item">
 					<NavLink
 						to="subscription"
-						className="Sidebar__nav-link"
+            className={({ isActive }) =>
+              isActive ? activeClassName : inactiveClassName
+            }
 					>
 						<i className="fa-solid fa-star"></i>
 						Subscription

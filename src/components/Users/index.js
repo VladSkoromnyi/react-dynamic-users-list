@@ -26,12 +26,35 @@ export const Users = () => {
 
 	return (
 		<div className="Users container">
+			<h1 className="Users__title">
+				All users
+			</h1>
+
+			<ul className="Users__column Users__column--headers">
+				<li className="Users__column-item">
+					User details
+				</li>
+				<li className="Users__column-item">
+					Company name
+				</li>
+				<li className="Users__column-item">
+					Email
+				</li>
+				<li className="Users__column-item">
+					Distance
+				</li>
+			</ul>
+
 			<ul className="Users__list">
 				{users.map(user => {
 					const {
 						id,
 						name,
+						email,
+						website,
 					} = user;
+					const company = user.company.name;
+					const { bs } = user.company;
 
 					return (
 						<li 
@@ -42,7 +65,20 @@ export const Users = () => {
 								className="Users__link" 
 								to={`/users/${id}`}
 							>
-								{name}
+								<ul className="Users__column">
+									<li className="Users__column-item">
+										{name}
+									</li>
+									<li className="Users__column-item">
+										{company}
+									</li>
+									<li className="Users__column-item">
+										{email}
+									</li>
+									<li className="Users__column-item">
+										Distance
+									</li>
+								</ul>
 							</Link>
 						</li>
 					)

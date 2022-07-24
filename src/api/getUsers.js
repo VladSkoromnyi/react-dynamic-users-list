@@ -1,28 +1,33 @@
 import { BASE_URL } from "./api";
 
-export const getUsers = async (id) => {
-	const response = await fetch(`${BASE_URL}users`);
-	const status = response.status;
-	
+const checkStatus = (status) => {
 	switch (true) {
-		case status >= 200 && response.status < 300:
-			return response.json();
+		case status >= 200 && status < 300:
+			return 'OK';
 			
-		case status > 400 && response.status < 500:
-			alert('Error 400x');
-			break;
+		case status > 400 && status < 500:
+			return 'Error 400x';
 			
 		case status > 500:
-			alert('Error 500x');
-			break;
+			return 'Error 500x';
 	
 		default:
 			break;
 	}
 }
 
+export const getUsers = async (id) => {
+	const response = await fetch(`${BASE_URL}users`);
+	const status = response.status;
+	const checked = checkStatus(status);
+
+	return checked === 'OK' ? response.json() : console.log(checked);
+}
+
 export const getUser = async (id) => {
 	const response = await fetch(`${BASE_URL}users/${id}`);
-	
-	return response.json();
+	const status = response.status;
+	const checked = checkStatus(status);
+
+	return checked === 'OK' ? response.json() : console.log(checked);
 }
