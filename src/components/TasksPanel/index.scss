@@ -1,0 +1,12 @@
+.TasksPanel {
+	margin: 0 30px;
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-between;
+	gap: 30px;
+
+	&__block{
+		width: 50%;
+		margin: 0 0 100px;
+	}
+}

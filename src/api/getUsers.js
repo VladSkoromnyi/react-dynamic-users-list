@@ -16,7 +16,7 @@ const checkStatus = (status) => {
 	}
 }
 
-export const getUsers = async (id) => {
+export const getUsers = async () => {
 	const response = await fetch(`${BASE_URL}users`);
 	const status = response.status;
 	const checked = checkStatus(status);

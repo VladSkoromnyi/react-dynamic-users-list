@@ -15,9 +15,12 @@
 			border-radius: 50%;
 			border: 4px solid #fff;
 			background-color: #363740;
-			background-image: url(../../assets/images/200.png);
 	
 			transform: translateY(100%);
+
+			& img {
+				border-radius: 50%;
+			}
 		}
 	}
 

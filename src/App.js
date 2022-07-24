@@ -6,6 +6,7 @@ import { Users } from "./components/Users";
 import { NotFound } from './components/NotFound';
 import { CurrentUser } from './components/CurrentUser';
 import { InfoPanel } from './components/InfoPanel';
+import { TasksPanel } from './components/TasksPanel';
 
 const App = () => {
   return (
@@ -16,8 +17,19 @@ const App = () => {
 
       <div className="App__content">
         <Routes>
-          <Route path="/" element={<><InfoPanel /><Home /></>} />
-          <Route path="users" element={<><InfoPanel /><Users /></>} />
+          <Route 
+            path="/" 
+            element={<><InfoPanel /><Home /></>} />
+          <Route 
+            path="users" 
+            element={
+              <>
+                <InfoPanel />
+                <Users />
+                <TasksPanel />
+              </>
+            } 
+          />
           <Route 
             path="users/:userId" 
             element={<><InfoPanel /><CurrentUser /></>} 

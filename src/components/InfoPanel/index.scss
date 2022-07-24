@@ -1,1 +1,45 @@
+.InfoPanel {
+	margin: 0 30px;
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-between;
+	gap: 30px;
 
+	&__block {
+		width: 25%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 58px 0 0;
+		padding: 24px 32px;
+
+		transition: all 0.3 ease;
+
+		& p {
+			font-weight: 700;
+			font-size: 19px;
+			line-height: 24px;
+			letter-spacing: 0.4px;
+			color: #9FA2B4;
+
+			&:last-child {
+				margin-top: 12px;
+				font-weight: 700;
+				font-size: 40px;
+				line-height: 50px;
+				letter-spacing: 1px;
+				color: #252733;
+			}
+		}
+
+		&:hover {
+			border-color: #3751FF;
+			cursor: pointer;
+
+			& p {
+				color: #3751FF;	
+			}
+		}
+	}
+}

@@ -55,6 +55,7 @@ export const Users = () => {
 					} = user;
 					const company = user.company.name;
 					const { bs } = user.company;
+					const { city } = user.address
 
 					return (
 						<li 
@@ -67,16 +68,39 @@ export const Users = () => {
 							>
 								<ul className="Users__column">
 									<li className="Users__column-item">
-										{name}
+										<img 
+											src="/200.png" 
+											alt="avatar"  
+										/>
+										<div>
+										<p>
+											{name}
+										</p>
+										<p className="Users__column-description">
+											{city}
+										</p>
+										</div>
 									</li>
 									<li className="Users__column-item">
-										{company}
+										<p>
+											{company}
+										</p>
+										<p className="Users__column-description">
+											{bs}
+										</p>
 									</li>
 									<li className="Users__column-item">
-										{email}
+										<p>
+											{email}
+										</p>
+										<p className="Users__column-description">
+											{website}
+										</p>
 									</li>
 									<li className="Users__column-item">
-										Distance
+										<span className="high">
+											High
+										</span>
 									</li>
 								</ul>
 							</Link>
