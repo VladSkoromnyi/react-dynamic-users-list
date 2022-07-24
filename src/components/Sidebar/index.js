@@ -1,4 +1,5 @@
 import './index.scss';
+import { NavLink } from 'react-router-dom';
 
 export const Sidebar = () => {
 	return (
@@ -12,79 +13,79 @@ export const Sidebar = () => {
 
 			<ul className="Sidebar__nav">
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="/"
 						className="Sidebar__nav-link icon icon--home"
-						href="/#"
 					>
 						<i className="fa-solid fa-chart-pie"></i>
 						Overview
-					</a>
+					</NavLink>
 				</li>
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="users"
 						className="Sidebar__nav-link"
-						href="/users"
 					>
 						<i className="fa-solid fa-users-rectangle"></i>
 						Users
-					</a>
+					</NavLink>
 				</li>
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="ideas"
 						className="Sidebar__nav-link"
-						href="/"
 					>
 						<i className="fa-solid fa-lightbulb"></i>
 						Ideas
-					</a>
+					</NavLink>
 				</li>		
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="contacts"
 						className="Sidebar__nav-link"
-						href="/"
 					>
 						<i className="fa-solid fa-users"></i>
 						Contacts
-					</a>
+					</NavLink>
 				</li>
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="agents"
 						className="Sidebar__nav-link"
-						href="/"
 					>
 						<i className="fa-solid fa-user-tie"></i>
 						Agents
-					</a>
+					</NavLink>
 				</li>
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="articles"
 						className="Sidebar__nav-link"
-						href="/"
 					>
 						<i className="fa-solid fa-book"></i>
 						Articles
-					</a>
+					</NavLink>
 				</li>	
 				<li className="Sidebar__nav-item">
 					<span></span>
 				</li>	
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="settings"
 						className="Sidebar__nav-link"
-						href="/"
 					>
 						<i className="fa-solid fa-gear"></i>
 						Settings
-					</a>
+					</NavLink>
 				</li>	
 				<li className="Sidebar__nav-item">
-					<a
+					<NavLink
+						to="subscription"
 						className="Sidebar__nav-link"
-						href="/"
 					>
 						<i className="fa-solid fa-star"></i>
 						Subscription
-					</a>
+					</NavLink>
 				</li>			
 			</ul>
 

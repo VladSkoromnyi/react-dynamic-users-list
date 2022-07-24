@@ -1,10 +1,11 @@
+import './index.scss';
 import { 
 	useCallback, 
   useEffect, 
   useState 
 } from 'react';
+import { Link } from 'react-router-dom';
 import { getUsers } from '../../api/getUsers';
-import './index.scss';
 
 export const Users = () => {
   
@@ -24,31 +25,29 @@ export const Users = () => {
   console.log(users);
 
 	return (
-		<>
-			<div className="Users">
-				<ul className="Users__list">
-					{users.map(user => {
-						const {
-							id,
-							name,
-						} = user;
+		<div className="Users container">
+			<ul className="Users__list">
+				{users.map(user => {
+					const {
+						id,
+						name,
+					} = user;
 
-						return (
-							<li 
-								key={id}
-								className="Users__item"
+					return (
+						<li 
+							key={id}
+							className="Users__item"
+						>
+							<Link
+								className="Users__link" 
+								to={`/users/${id}`}
 							>
-								<a
-									className="Users__link" 
-									href="/users/:username"
-								>
-									{name}
-								</a>
-							</li>
-						)
-					})}
-				</ul>
-			</div>
-		</>
+								{name}
+							</Link>
+						</li>
+					)
+				})}
+			</ul>
+		</div>
 	)
 }

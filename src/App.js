@@ -1,12 +1,32 @@
-import { Sidebar } from "./components/Sidebar"
+import './App.scss';
+import { Routes, Route } from 'react-router-dom';
+import { Sidebar } from "./components/Sidebar";
+import { Home } from "./components/Home";
 import { Users } from "./components/Users";
+import { NotFound } from './components/NotFound';
+import { CurrentUser } from './components/CurrentUser';
+import { InfoPanel } from './components/InfoPanel';
 
 const App = () => {
   return (
     <div className="App">
-      <Sidebar />
-      <div className="container">
-        <Users />        
+      <div className="App__navigation">
+        <Sidebar />        
+      </div>
+
+      <div className="App__content">
+        <Routes>
+          <Route path="/" element={<><InfoPanel /><Home /></>} />
+          <Route path="users" element={<><InfoPanel /><Users /></>} />
+          <Route 
+            path="users/:userId" 
+            element={<><InfoPanel /><CurrentUser /></>} 
+          />
+          <Route path="ideas" element={<Home />} />
+          <Route path="about" element={<Home />} />
+          <Route path="contacts" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
     </div>   
   )
