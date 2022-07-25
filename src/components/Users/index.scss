@@ -1,11 +1,31 @@
 .Users {
 
 	&__title {
-		font-weight: 700;
-		font-size: 19px;
-		line-height: 24px;
-		letter-spacing: 0.4px;
-		padding: 0 32px 26px;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 32px 26px;	
+
+		& h1 {
+			font-weight: 700;
+			font-size: 19px;
+			line-height: 24px;
+			letter-spacing: 0.4px;		
+		}
+
+		& span {
+			font-size: 14px;
+			color: #4B506D;
+			cursor: pointer;
+
+			&:hover i {
+				color: #4B506D;
+			}
+		}
+
+		& i {
+			margin-right: 9px;
+			color: #C5C7CD;
+		}
 	}
 
 	&__column {
@@ -84,4 +104,12 @@
 
 .high {
 	background: #F12B2C;
+}
+
+.low {
+	background: #FEC400;
+}
+
+.normal {
+	background: #29CC97;
 }

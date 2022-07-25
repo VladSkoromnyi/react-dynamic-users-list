@@ -8,5 +8,54 @@
 	&__block{
 		width: 50%;
 		margin: 0 0 100px;
+		padding: 32px 0 0;
+
+		&-title, &-item {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&-title, &-description {
+			padding: 0 32px;
+		}
+
+		&-description {
+			margin-top: 8px;
+
+			& span {
+				color: #9FA2B4;
+			}
+		}
+
+		&-list {
+			margin-top: 18px;
+		}
+
+		&-item {
+			padding: 18px 32px;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid #DFE0EB;
+			}
+
+			& span {
+				color: #9FA2B4;
+			}
+
+			& button {
+				outline: none;
+				background: #F0F1F7;
+				border-radius: 8px;
+				color: #9FA2B4;
+				font-weight: 400;
+				font-size: 18px;
+				border: none;
+				cursor: pointer;
+			}
+		}
 	}
+}
+
+.grey {
+	color: #9FA2B4;
 }

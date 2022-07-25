@@ -6,11 +6,11 @@ import {
 } from 'react';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../../api/getUsers';
+import avatar from '../../assets/images/200.png';
 
 export const CurrentUser = () => {
 	const { userId } = useParams();
-	const [user, setUser] = useState({});
-	const path = '/200.png';
+	const [user, setUser] = useState(null);
 
   const getData = useCallback(async () => {
     const data = await getUser(userId);
@@ -22,13 +22,11 @@ export const CurrentUser = () => {
     getData();
   }, [getData, userId])
 
-	console.log(user)
-
 	return (
 		<div className="CurrentUser container">
 			<div className="CurrentUser__head">
 				<div className="CurrentUser__head-avatar">
-					<img src={path} alt={user?.name} />
+					<img src={avatar} alt={user?.name} />
 				</div>				
 			</div>
 

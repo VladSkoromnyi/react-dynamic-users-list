@@ -6,9 +6,9 @@ import {
 } from 'react';
 import { Link } from 'react-router-dom';
 import { getUsers } from '../../api/getUsers';
+import avatar from '../../assets/images/200.png';
 
 export const Users = () => {
-  
 	const [users, setUsers] = useState([])
 
   const getData = useCallback(async () => {
@@ -21,14 +21,34 @@ export const Users = () => {
     getData();
   }, [getData])
 
-
-  console.log(users);
+	const handlerDistance = (lat, lng) => {
+		switch (true) {
+			case lat < 0 && lng < 0:
+				return 'high';
+			
+			case (lat < 0 && lng > 0) || (lat > 0 && lng < 0):
+				return 'low';
+			
+			case lat > 0 && lng > 0:
+				return 'normal';
+		
+			default:
+				break;
+		}
+	}
 
 	return (
 		<div className="Users container">
-			<h1 className="Users__title">
-				All users
-			</h1>
+			<div className="Users__title">
+				<h1>
+					All users
+				</h1>
+				<span>
+					<i className="fa-solid fa-arrow-up-wide-short"></i>
+					Sort
+				</span>				
+			</div>
+
 
 			<ul className="Users__column Users__column--headers">
 				<li className="Users__column-item">
@@ -46,7 +66,7 @@ export const Users = () => {
 			</ul>
 
 			<ul className="Users__list">
-				{users.map(user => {
+				{users?.map(user => {
 					const {
 						id,
 						name,
@@ -55,7 +75,8 @@ export const Users = () => {
 					} = user;
 					const company = user.company.name;
 					const { bs } = user.company;
-					const { city } = user.address
+					const { city } = user.address;
+					const { lat, lng } = user.address.geo;
 
 					return (
 						<li 
@@ -69,7 +90,7 @@ export const Users = () => {
 								<ul className="Users__column">
 									<li className="Users__column-item">
 										<img 
-											src="/200.png" 
+											src={avatar}
 											alt="avatar"  
 										/>
 										<div>
@@ -98,8 +119,10 @@ export const Users = () => {
 										</p>
 									</li>
 									<li className="Users__column-item">
-										<span className="high">
-											High
+										<span className={
+											handlerDistance(lat, lng)
+										}>
+											{handlerDistance(lat, lng)}
 										</span>
 									</li>
 								</ul>
