@@ -18,6 +18,7 @@ const App = () => {
       <div className="App__content">
         <Routes>
           <Route 
+            index
             path="/" 
             element={<><InfoPanel /><Home /></>} />
           <Route 
