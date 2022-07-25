@@ -86,7 +86,7 @@ export const TasksPanel = () => {
 							Finish ticket update
 						</p>
 
-						<span>
+						<span className="ticket-status low">
 							Urgent
 						</span>
 					</li>
@@ -95,7 +95,7 @@ export const TasksPanel = () => {
 							Create new ticket example
 						</p>
 
-						<span>
+						<span className="ticket-status normal">
 							New
 						</span>
 					</li>
@@ -104,7 +104,7 @@ export const TasksPanel = () => {
 							Update ticket report
 						</p>
 
-						<span>
+						<span className="ticket-status default">
 							Default
 						</span>
 					</li>

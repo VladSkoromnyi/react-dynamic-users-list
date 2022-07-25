@@ -13,6 +13,7 @@
 		&-title, &-item {
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 		}
 
 		&-title, &-description {
@@ -40,6 +41,15 @@
 
 			& span {
 				color: #9FA2B4;
+
+				&.ticket-status {
+					font-size: 11px;
+					color: #fff;
+				}
+
+				&.default {
+					color: #9FA2B4;
+				}
 			}
 
 			& button {
@@ -54,6 +64,18 @@
 			}
 		}
 	}
+}
+
+.ticket-status {
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	padding: 3px 10px;
+	border-radius: 8px;
+	color: #fff;
+}
+
+.default {
+	background: #F0F1F7;
 }
 
 .grey {
