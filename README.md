@@ -1,4 +1,4 @@
-### Dynamic users list
+# Dynamic users list
 
 ## Implemented
 	
@@ -11,6 +11,6 @@
 	- Page 404 (Not found)
 	- Design from figma layout
 
-# Demo
+## Demo
 
 [DEMO](https://vladskoromnyi.github.io/react-dynamic-users-list/)
