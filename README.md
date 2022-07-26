@@ -1,7 +1,7 @@
 # Dynamic users list
-	This is single page application with dynamic users list from API
+This is single page application with dynamic users list from API
 
-	[DEMO](https://vladskoromnyi.github.io/react-dynamic-users-list/)
+[DEMO](https://vladskoromnyi.github.io/react-dynamic-users-list/)
 
 ## Dependencied
 
