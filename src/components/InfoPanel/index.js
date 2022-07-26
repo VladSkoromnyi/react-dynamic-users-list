@@ -2,7 +2,7 @@ import './index.scss';
 
 export const InfoPanel = () => {
 	return (
-		<div className="InfoPanel">
+		<div className="InfoPanel unselectable">
 			<div className="InfoPanel__block container">
 				<p>
 					Active

@@ -6,7 +6,7 @@ export const Sidebar = () => {
 	const inactiveClassName = 'Sidebar__nav-link';
 
 	return (
-		<div className="Sidebar">
+		<div className="Sidebar unselectable">
 			<div className="Sidebar__logo">
 				<div className="Sidebar__logo-img"></div>
 				<h3 className="Sidebar__logo-title">

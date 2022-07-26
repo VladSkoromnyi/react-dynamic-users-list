@@ -53,14 +53,14 @@ export const Users = () => {
 				<h1>
 					All users
 				</h1>
-				<span onClick={reverseUsers}>
+				<span onClick={reverseUsers} className="unselectable" >
 					<i className="fa-solid fa-arrow-up-wide-short"></i>
 					Sort
 				</span>				
 			</div>
 
 
-			<ul className="Users__column Users__column--headers">
+			<ul className="Users__column Users__column--headers unselectable">
 				<li className="Users__column-item">
 					User details
 				</li>
