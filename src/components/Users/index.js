@@ -42,13 +42,17 @@ export const Users = () => {
 		}
 	}
 
+	const reverseUsers = () => {
+		setUsers([...users].reverse());
+	}
+
 	return (
 		<div className="Users container">
 			<div className="Users__title">
 				<h1>
 					All users
 				</h1>
-				<span>
+				<span onClick={reverseUsers}>
 					<i className="fa-solid fa-arrow-up-wide-short"></i>
 					Sort
 				</span>				
