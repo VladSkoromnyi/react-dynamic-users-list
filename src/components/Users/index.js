@@ -6,10 +6,9 @@ import {
 } from 'react';
 import { Link } from 'react-router-dom';
 import { getUsers } from '../../api/getUsers';
-import avatar from '../../assets/images/200.png';
 
 export const Users = () => {
-	const [users, setUsers] = useState([])
+	const [users, setUsers] = useState([]);
 
   const getData = useCallback(async () => {
     const data = await getUsers();
@@ -20,6 +19,12 @@ export const Users = () => {
   useEffect(() => {
     getData();
   }, [getData])
+
+	const importImg = (id) => {
+		const avatar = require(`../../assets/images/avatars/${id}.jpg`)
+
+		return avatar;
+	}
 
 	const handlerDistance = (lat, lng) => {
 		switch (true) {
@@ -66,7 +71,7 @@ export const Users = () => {
 			</ul>
 
 			<ul className="Users__list">
-				{users?.map(user => {
+				{users?.map((user, i) => {
 					const {
 						id,
 						name,
@@ -90,7 +95,7 @@ export const Users = () => {
 								<ul className="Users__column">
 									<li className="Users__column-item">
 										<img 
-											src={avatar}
+											src={importImg(id)}
 											alt="avatar"  
 										/>
 										<div>

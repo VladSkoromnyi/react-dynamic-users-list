@@ -6,7 +6,6 @@ import {
 } from 'react';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../../api/getUsers';
-import avatar from '../../assets/images/200.png';
 
 export const CurrentUser = () => {
 	const { userId } = useParams();
@@ -22,11 +21,17 @@ export const CurrentUser = () => {
     getData();
   }, [getData, userId])
 
+	const importImg = (id) => {
+		const avatar = require(`../../assets/images/avatars/${id}.jpg`)
+
+		return avatar;
+	}
+
 	return (
 		<div className="CurrentUser container">
 			<div className="CurrentUser__head">
 				<div className="CurrentUser__head-avatar">
-					<img src={avatar} alt={user?.name} />
+					<img src={importImg(userId)} alt={user?.name} />
 				</div>				
 			</div>
 

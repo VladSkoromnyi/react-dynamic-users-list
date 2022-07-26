@@ -4,13 +4,13 @@
 		display: flex;
 		align-items: center;
 		padding: 37px 32px;
+		gap: 12px;
 
 		cursor: default;
 
 		&-img {
 			width: 32px;
 			height: 32px;
-			margin-right: 12px;
 			background-image: url(../../assets/images/logo.png);
 		}
 

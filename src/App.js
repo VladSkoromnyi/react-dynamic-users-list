@@ -20,7 +20,8 @@ const App = () => {
           <Route 
             index
             path="/" 
-            element={<><InfoPanel /><Home /></>} />
+            element={<><InfoPanel /><Home /></>} 
+          />
           <Route 
             path="users" 
             element={
@@ -30,7 +31,7 @@ const App = () => {
                 <TasksPanel />
               </>
             } 
-          />
+          />            
           <Route 
             path="users/:userId" 
             element={<><InfoPanel /><CurrentUser /></>} 
