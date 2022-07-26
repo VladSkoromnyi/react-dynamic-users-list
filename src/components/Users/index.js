@@ -6,6 +6,7 @@ import {
 } from 'react';
 import { Link } from 'react-router-dom';
 import { getUsers } from '../../api/getUsers';
+import { Bars } from 'react-loader-spinner';
 
 export const Users = () => {
 	const [users, setUsers] = useState([]);
@@ -75,7 +76,9 @@ export const Users = () => {
 			</ul>
 
 			<ul className="Users__list">
-				{users?.map((user, i) => {
+				{!users 
+					? <Bars color="#3851FF" />
+					: users?.map((user, i) => {
 					const {
 						id,
 						name,

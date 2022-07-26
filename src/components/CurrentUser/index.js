@@ -6,6 +6,7 @@ import {
 } from 'react';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../../api/getUsers';
+import { TailSpin, ThreeDots } from 'react-loader-spinner';
 
 export const CurrentUser = () => {
 	const { userId } = useParams();
@@ -31,12 +32,22 @@ export const CurrentUser = () => {
 		<div className="CurrentUser container">
 			<div className="CurrentUser__head">
 				<div className="CurrentUser__head-avatar">
-					<img src={importImg(userId)} alt={user?.name} />
+					
+				{
+					!user 
+						? <TailSpin color="#fff" height={140} />
+						: <img src={importImg(userId)} alt={user?.name} />
+				}
 				</div>				
 			</div>
 
 			<h2 className="CurrentUser__name">
-				{user?.name}
+				{
+					!user 
+						? <ThreeDots color="#3851FF" height={10} />
+						: user?.name
+				}
+				
 			</h2>
 
 			<p className="CurrentUser__phrase">
@@ -49,11 +60,19 @@ export const CurrentUser = () => {
 				</h2>
 
 				<p className="CurrentUser__info-description">
-					{user?.address?.street}, {user?.address?.suite}
+					{
+						!user 
+							? <ThreeDots color="#3851FF" height={10} />
+							: user?.address?.street + ', ' + user?.address?.suite
+					}
 				</p>
 
 				<p className="CurrentUser__info-description">
-					{user?.address?.city}, {user?.address?.zipcode}
+					{
+						!user
+							? ''
+							: user?.address?.city + ', ' + user?.address?.zipcode
+					}
 				</p>
 			</div>
 
@@ -63,7 +82,11 @@ export const CurrentUser = () => {
 				</h2>
 
 				<p className="CurrentUser__info-description">
-					+{user?.phone?.split(' ')[0]}
+					{
+						!user 
+							? <ThreeDots color="#3851FF" height={10} />
+							: '+' + user?.phone?.split(' ')[0]
+					}
 				</p>
 			</div>
 
@@ -73,13 +96,17 @@ export const CurrentUser = () => {
 				</h2>
 
 				<p className="CurrentUser__info-description">
-					<a 
-						href={`http://${user?.website}`} 
-						target="_blank" 
-						rel="noreferrer"
-					>
-						{user?.website}
-					</a>
+					{
+						!user 
+							? <ThreeDots color="#3851FF" height={10} />
+							: <a 
+									href={`http://${user?.website}`} 
+									target="_blank" 
+									rel="noreferrer"
+								>
+									{user?.website}
+								</a>
+					}
 				</p>
 			</div>
 
