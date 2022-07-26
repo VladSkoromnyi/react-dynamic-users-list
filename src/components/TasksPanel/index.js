@@ -1,4 +1,5 @@
 import './index.scss';
+import { Link } from 'react-router-dom';
 
 export const TasksPanel = () => {
 	return (
@@ -8,9 +9,9 @@ export const TasksPanel = () => {
 					<h2>
 						Unresolved tickets
 					</h2>
-					<a href="#">
+					<Link to="/users">
 						View details
-					</a>
+					</Link>
 				</div>
 				
 				<div className="TasksPanel__block-description">
@@ -62,9 +63,9 @@ export const TasksPanel = () => {
 					<h2>
 						Tasks
 					</h2>
-					<a href="#">
+					<Link to="/users">
 						View all
-					</a>
+					</Link>
 				</div>
 				
 				<div className="TasksPanel__block-description">
@@ -83,7 +84,11 @@ export const TasksPanel = () => {
 					</li>
 					<li className="TasksPanel__block-item">
 						<p>
-							Finish ticket update
+							<label>
+								<input type="checkbox" />
+
+								Finish ticket update
+							</label>
 						</p>
 
 						<span className="ticket-status low">
@@ -92,7 +97,11 @@ export const TasksPanel = () => {
 					</li>
 					<li className="TasksPanel__block-item">
 						<p>
-							Create new ticket example
+							<label>
+								<input type="checkbox" />
+
+								Create new ticket example
+							</label>
 						</p>
 
 						<span className="ticket-status normal">
@@ -101,7 +110,11 @@ export const TasksPanel = () => {
 					</li>
 					<li className="TasksPanel__block-item">
 						<p>
-							Update ticket report
+							<label>
+								<input type="checkbox" />
+
+								Update ticket report
+							</label>
 						</p>
 
 						<span className="ticket-status default">

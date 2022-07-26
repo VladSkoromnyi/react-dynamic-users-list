@@ -10,7 +10,9 @@
 		margin: 0 0 100px;
 		padding: 32px 0 0;
 
-		&-title, &-item {
+		&-title, 
+		&-item, 
+		&-item label {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -34,6 +36,16 @@
 
 		&-item {
 			padding: 18px 32px;
+
+			& input {
+				display: block;
+			}
+
+			& label {
+				display: flex;
+				gap: 16px;
+				cursor: pointer;
+			}
 
 			&:not(:last-child) {
 				border-bottom: 1px solid #DFE0EB;
