@@ -1,0 +1,95 @@
+.Modal {
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	position: fixed;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(0, 0, 0, 0.4);
+
+
+	&__content {
+		position: relative;
+		width: 30%;
+		padding: 40px;
+	}
+
+	&__close {
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		font-size: 24px;
+		text-align: center;
+		background: #F12B2C;
+		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		color: #fff;
+		border: 0.5px solid #000;
+		transform: rotate(45deg);
+		cursor: pointer;
+	}
+
+	&__form {
+
+		& label {
+			cursor: pointer;
+
+			&:hover {
+				opacity: 0.7;
+			}
+
+			&:focus {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__input {
+		display: block;
+		margin-bottom: 20px;
+
+		&--text {
+			width: 100%;
+			padding: 5px 10px;
+			font-size: 16px;
+			outline: none;
+			border: none;
+			border-bottom: 1px solid #9FA2B4;
+			
+			&:focus {
+				border-bottom: 2px solid #3851FF;
+			}
+		}
+
+		&--radio {
+			visibility: hidden;
+			margin-bottom: 0;
+		}
+	}
+
+	&__button {
+		display: block;
+		width: 100%;
+		border: 1px solid #DFE0EB;
+		border-radius: 8px;
+		padding: 10px 20px;
+		margin-top: 20px;
+		color: #252733;
+		font-weight: 700;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		&:focus {
+			opacity: 1;
+		}
+	}
+}

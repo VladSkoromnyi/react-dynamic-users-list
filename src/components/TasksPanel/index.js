@@ -1,9 +1,83 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Task } from '../Task';
+import { Modal } from '../Modal';
+// import { initialTasks } from '../../api/tasks';
 
 export const TasksPanel = () => {
+	const [tasks, setTasks] = useState([])
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [listLengthSettings, setListLengthSettings] = useState({
+		toggleText: 'View all',
+		listLength: 3,
+		isViewAll: false,
+	})
+
+	// localStorage.setItem(
+	// 	'localTasksStore',
+	// 	JSON.stringify(initialTasks)
+	// 	)
+
+	useEffect(() => {
+		if (localStorage.getItem('localTasksStore')) {
+			setTasks(
+				JSON.parse(localStorage.getItem('localTasksStore'))
+			)
+		}		
+	}, [])
+
+	const handleListLength = () => {
+		if (!listLengthSettings.isViewAll) {
+			setListLengthSettings((prev) => ({
+				...prev,
+				toggleText: 'View less',
+				isViewAll: true,
+			}))
+		} else {
+			setListLengthSettings((prev) => ({
+				...prev,
+				toggleText: 'View all',
+				isViewAll: false,
+			}))
+		}
+
+	}
+
+	const addNewTask = ({	title, category }) => {
+		if (title) {
+			const newId = Math.random().toString(36).substring(2, 9)
+			const newTask = {
+				id: newId,
+				title: title,
+				category: category,
+			}
+
+			setTasks([ newTask, ...tasks ])
+			localStorage.setItem(
+				'localTasksStore', 
+				JSON.stringify([ newTask, ...tasks ])
+			)
+			
+			setIsModalOpen(false)
+		}
+	}
+
+	const removeTask = (id) => {
+		const deleted = tasks.filter(item => {
+			return item.id !== id
+		})
+
+		setTimeout(() => setTasks(deleted), 500)
+		localStorage.setItem(
+			'localTasksStore', 
+			JSON.stringify(deleted)
+		)
+	}
+
 	return (
-		<div className="TasksPanel">
+		<>
+			<div className="TasksPanel">
 			<div className="TasksPanel__block container">
 				<div className="TasksPanel__block-title">
 					<h2>
@@ -63,8 +137,11 @@ export const TasksPanel = () => {
 					<h2>
 						Tasks
 					</h2>
-					<Link to="/users">
-						View all
+					<Link 
+						to="/users"
+						onClick={() => handleListLength()}
+					>
+						{listLengthSettings.toggleText}
 					</Link>
 				</div>
 				
@@ -78,51 +155,45 @@ export const TasksPanel = () => {
 							Create new task
 						</p>
 
-						<button type="button">
+						<button 
+							onClick={setIsModalOpen}
+							type="button"
+						>
 							+
-						</button>
+						</button>		
 					</li>
-					<li className="TasksPanel__block-item">
-						<p>
-							<label>
-								<input type="checkbox" />
 
-								Finish ticket update
-							</label>
-						</p>
+					{
+						tasks?.map((item, i) => {
+							if (!listLengthSettings.isViewAll && i >= 3) {
+								return null;
+							}
 
-						<span className="ticket-status low">
-							Urgent
-						</span>
-					</li>
-					<li className="TasksPanel__block-item">
-						<p>
-							<label>
-								<input type="checkbox" />
+							const {
+								id,
+								title,
+								category,
+							} = item
 
-								Create new ticket example
-							</label>
-						</p>
-
-						<span className="ticket-status normal">
-							New
-						</span>
-					</li>
-					<li className="TasksPanel__block-item">
-						<p>
-							<label>
-								<input type="checkbox" />
-
-								Update ticket report
-							</label>
-						</p>
-
-						<span className="ticket-status default">
-							Default
-						</span>
-					</li>
+							return (
+								<Task 
+									key={id}
+									id={id}
+									title={title}
+									category={category}
+									removeTask={removeTask}
+								/>
+							)
+						})
+					}
 				</ul>
 			</div>
 		</div>
+		{
+			isModalOpen 
+				? <Modal addNewTask={addNewTask} setIsModalOpen={setIsModalOpen} />	
+				: null
+		}
+		</>
 	)
 }
