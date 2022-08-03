@@ -20,6 +20,7 @@ This is single page application with dynamic users list from API
 	- Page 404 (Not found)
 	- Design from figma layout
 	- Imitation distance computing
+	- Add/Delete tasks with localStorage
 
 ## Installing
 
