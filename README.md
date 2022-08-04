@@ -22,7 +22,7 @@ This is single page application with dynamic users list from API
 	- Page 404 (Not found)
 	- Design from figma layout
 	- Imitation distance computing
-	- Add/Delete tasks with localStorage
+	- Add/Delete tasks with localStorage (implemented 'View all' button)
 	- Circle chart, edit/add/remove chart items with localStorage
 
 ## Installing
