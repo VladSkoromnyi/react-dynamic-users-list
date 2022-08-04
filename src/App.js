@@ -8,6 +8,7 @@ import { CurrentUser } from './components/CurrentUser';
 import { InfoPanel } from './components/InfoPanel';
 import { TasksPanel } from './components/TasksPanel';
 import { Articles } from './components/Articles';
+import { PageInDevelop } from './components/PageInDevelop';
 
 const App = () => {
   return (
@@ -37,12 +38,12 @@ const App = () => {
             path="users/:userId" 
             element={<><InfoPanel /><CurrentUser /></>} 
           />
-          <Route path="ideas" element={<Home />} />
-          <Route path="contacts" element={<Home />} />
-          <Route path="agents" element={<Home />} />
-          <Route path="articles" element={<Articles />} />
-          <Route path="settings" element={<Home />} />
-          <Route path="subscription" element={<Home />} />
+          <Route path="ideas" element={<PageInDevelop />} />
+          <Route path="contacts" element={<PageInDevelop />} />
+          <Route path="agents" element={<PageInDevelop />} />
+          <Route path="articles" element={<PageInDevelop />} />
+          <Route path="settings" element={<PageInDevelop />} />
+          <Route path="subscription" element={<PageInDevelop />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
