@@ -38,7 +38,7 @@ export const ChartControls = ({ data, setData }) => {
 		const newItem = {
 			id: Math.random().toString(36).substring(2, 9),
 			label: '',
-			gain: 0,
+			gain: null,
 		}
 		setData(prev => [ ...prev, newItem ])
 		localStorage.setItem('localChartData', JSON.stringify([ ...data, newItem ]))

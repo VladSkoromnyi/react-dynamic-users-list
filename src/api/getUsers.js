@@ -1,4 +1,4 @@
-import { BASE_URL } from "./api";
+import { USERS_URL } from "./api";
 
 const checkStatus = (status) => {
 	switch (true) {
@@ -17,7 +17,7 @@ const checkStatus = (status) => {
 }
 
 export const getUsers = async () => {
-	const response = await fetch(`${BASE_URL}users`);
+	const response = await fetch(`${USERS_URL}users`);
 	const status = response.status;
 	const checked = checkStatus(status);
 
@@ -25,7 +25,7 @@ export const getUsers = async () => {
 }
 
 export const getUser = async (id) => {
-	const response = await fetch(`${BASE_URL}users/${id}`);
+	const response = await fetch(`${USERS_URL}users/${id}`);
 	const status = response.status;
 	const checked = checkStatus(status);
 

@@ -7,6 +7,7 @@ import { NotFound } from './components/NotFound';
 import { CurrentUser } from './components/CurrentUser';
 import { InfoPanel } from './components/InfoPanel';
 import { TasksPanel } from './components/TasksPanel';
+import { Articles } from './components/Articles';
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
           <Route 
             index
             path="/" 
-            element={<><InfoPanel /><Home /></>} 
+            element={<><Home /></>} 
           />
           <Route 
             path="users" 
@@ -37,10 +38,9 @@ const App = () => {
             element={<><InfoPanel /><CurrentUser /></>} 
           />
           <Route path="ideas" element={<Home />} />
-          <Route path="about" element={<Home />} />
           <Route path="contacts" element={<Home />} />
           <Route path="agents" element={<Home />} />
-          <Route path="articles" element={<Home />} />
+          <Route path="articles" element={<Articles />} />
           <Route path="settings" element={<Home />} />
           <Route path="subscription" element={<Home />} />
           <Route path="*" element={<NotFound />} />

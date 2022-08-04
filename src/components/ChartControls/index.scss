@@ -45,4 +45,30 @@
 			color: #df2c2c;
 		}
 	}
+
+	&__button {
+		width: 100%;
+		padding: 10px;
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		border-radius: 8px;
+		border: 1px solid #3851FF;
+		color: #3851FF;
+		background: #fff;
+		cursor: pointer;
+
+		&:hover {
+			color: #fff;
+			background: #3851FF;
+			border-color: #3851FF;
+		}
+
+		&:focus {
+			border-color: #3851FF;
+			color: #3851FF;
+			background: #fff;			
+		}
+	}
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Task } from '../Task';
 import { Modal } from '../Modal';
+import { tasksData } from '../../assets/tasksData'
 
 export const TasksPanel = () => {
 	const [tasks, setTasks] = useState([])
@@ -18,7 +19,9 @@ export const TasksPanel = () => {
 			setTasks(
 				JSON.parse(localStorage.getItem('localTasksStore'))
 			)
-		}		
+		} else {
+			setTasks([...tasksData])
+		}
 	}, [])
 
 	const handleListLength = () => {

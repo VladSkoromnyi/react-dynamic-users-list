@@ -39,14 +39,14 @@ export const Home = () => {
 		if (localStorage.getItem('localChartData')) {
 			setData(JSON.parse(localStorage.getItem('localChartData')))
 		} else {
-			setData([])
+			setData([...chartGainsData])
 		}
 	}, [])
 
 	return (
 		<div className="Home container">
 			<h1 className="Home__title">
-				Page in develop
+				Our statistic in Ukrainian cities
 			</h1>
 
 			<div className="Home__chart">
@@ -60,7 +60,7 @@ export const Home = () => {
 						setData={setData}
 					/>
 				</div>				
-			</div>	
+			</div>
 		</div>
 	)
 }
