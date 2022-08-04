@@ -5,4 +5,13 @@
 		color: rgb(224, 0, 0);
 		margin: 0 0 32px;
 	}
+
+	&__chart {
+		display: flex;
+
+		&-block {
+			width: 50%;
+			height: max-content;
+		}
+	}
 }

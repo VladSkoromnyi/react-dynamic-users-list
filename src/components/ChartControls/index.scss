@@ -1,0 +1,48 @@
+.ChartControls {
+	padding: 25px;
+
+	&__item {
+		margin-bottom: 15px;
+		position: relative;
+	}
+
+	&__input {
+		padding: 10px;
+		border: none;
+		border-bottom: 1px solid #252733;
+		outline: none;
+
+		&:focus {
+			border-bottom: 2px solid #3851FF;;
+		}
+
+		&:first-child {
+			margin-right: 5%;
+			padding-left: 30px;
+		}
+
+		&:first-child {
+			width: 75%;
+		}
+
+		&:last-child {
+			width: 20%;
+		}
+	}
+
+	&__remove {
+		position: absolute;
+		top: 5px;
+		left: 0;
+		border: none;
+		background: #fff;
+		font-size: 24px;
+		padding: 0;
+		transform: rotate(45deg);
+		cursor: pointer;
+
+		&:hover {
+			color: #df2c2c;
+		}
+	}
+}
