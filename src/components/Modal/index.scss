@@ -20,11 +20,11 @@
 
 	&__close {
 		position: absolute;
-		top: -10px;
-		right: -10px;
-		font-size: 24px;
+		top: -8px;
+		right: -8px;
+		font-size: 20px;
 		text-align: center;
-		background: #F12B2C;
+		background: #df2c2c;
 		border-radius: 50%;
 		width: 24px;
 		height: 24px;
@@ -32,6 +32,10 @@
 		border: 0.5px solid #000;
 		transform: rotate(45deg);
 		cursor: pointer;
+
+		&:hover {
+			transform: rotate(135deg);
+		}
 	}
 
 	&__form {
@@ -92,4 +96,9 @@
 			opacity: 1;
 		}
 	}
+}
+
+.radio {
+	display: flex;
+	justify-content: space-between;
 }

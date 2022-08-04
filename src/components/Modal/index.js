@@ -24,44 +24,48 @@ export const Modal = ({ addNewTask, setIsModalOpen }) => {
 						})}
 					/>
 
-					<label>
-						<input
-							className='Modal__input Modal__input--radio'
-							type='radio'
-							value='default'
-							checked={false}
-							onChange={({ target }) => setTask((prev) => {
-								return {...prev, category: target.value}
-							})}
-						/>	
-						<span className='ticket-status default grey'>default</span>					
-					</label>
-					
-					<label>
-						<input
-							className='Modal__input Modal__input--radio'
-							type='radio'
-							value='urgent'
-							checked={false}
-							onChange={({ target }) => setTask((prev) => {
-								return {...prev, category: target.value}
-							})}
-						/>		
-						<span className='ticket-status urgent'>urgent</span>
-					</label>
-					
-					<label>
-						<input
-							className='Modal__input Modal__input--radio'
-							type='radio'
-							value='new'
-							checked={false}
-							onChange={({ target }) => setTask((prev) => {
-								return {...prev, category: target.value}
-							})}
-						/>
-						<span className='ticket-status new'>new</span>				
-					</label>
+					<div className="radio">
+						<label>
+							<input
+								className='Modal__input Modal__input--radio'
+								type='radio'
+								value='default'
+								checked={false}
+								onChange={({ target }) => setTask((prev) => {
+									return {...prev, category: target.value}
+								})}
+							/>	
+							<span className='ticket-status default grey'>default</span>					
+						</label>
+						
+						<label>
+							<input
+								className='Modal__input Modal__input--radio'
+								type='radio'
+								value='urgent'
+								checked={false}
+								onChange={({ target }) => setTask((prev) => {
+									return {...prev, category: target.value}
+								})}
+							/>		
+							<span className='ticket-status urgent'>urgent</span>
+						</label>
+						
+						<label>
+							<input
+								className='Modal__input Modal__input--radio'
+								type='radio'
+								value='new'
+								checked={false}
+								onChange={({ target }) => setTask((prev) => {
+									return {...prev, category: target.value}
+								})}
+							/>
+							<span className='ticket-status new'>new</span>				
+						</label>						
+					</div>
+
+
 
 					<button 
 						className={`Modal__button ${task.category}`}

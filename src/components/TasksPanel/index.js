@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Task } from '../Task';
 import { Modal } from '../Modal';
-// import { initialTasks } from '../../api/tasks';
 
 export const TasksPanel = () => {
 	const [tasks, setTasks] = useState([])
@@ -14,11 +13,6 @@ export const TasksPanel = () => {
 		isViewAll: false,
 	})
 
-	// localStorage.setItem(
-	// 	'localTasksStore',
-	// 	JSON.stringify(initialTasks)
-	// 	)
-
 	useEffect(() => {
 		if (localStorage.getItem('localTasksStore')) {
 			setTasks(
@@ -28,20 +22,11 @@ export const TasksPanel = () => {
 	}, [])
 
 	const handleListLength = () => {
-		if (!listLengthSettings.isViewAll) {
-			setListLengthSettings((prev) => ({
-				...prev,
-				toggleText: 'View less',
-				isViewAll: true,
-			}))
-		} else {
-			setListLengthSettings((prev) => ({
-				...prev,
-				toggleText: 'View all',
-				isViewAll: false,
-			}))
-		}
-
+		setListLengthSettings((prev) => ({
+			...prev,
+			toggleText: `View ${!prev.isViewAll ? 'less' : 'all'}`,
+			isViewAll: !prev.isViewAll,
+		}))
 	}
 
 	const addNewTask = ({	title, category }) => {
