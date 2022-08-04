@@ -9,6 +9,8 @@ This is single page application with dynamic users list from API
 	- React Router DOM ^6.3.0
 	- React loader spinner ^5.1.7-beta.1
 	- node-sass ^7.0.1
+	- chart.js ^3.9.1
+	- react-chartjs-2 ^4.3.1
 ## Implemented
 	
 	- Dynamic users list from api
@@ -21,6 +23,7 @@ This is single page application with dynamic users list from API
 	- Design from figma layout
 	- Imitation distance computing
 	- Add/Delete tasks with localStorage
+	- Circle chart, edit/add/remove chart items with localStorage
 
 ## Installing
 
